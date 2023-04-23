@@ -18,7 +18,7 @@
 					<nav id="nav">
 						<ul>
 							<li><a href="https://github.com/MoshirMoshir/moshirmoshir.github.io">The C0de</a></li>
-							<li><a href="webgl.html">WebGL</a></li>
+							<li><a href="webgl.html">Games</a></li>
 						</ul>
 					</nav>
 				</header>
@@ -27,7 +27,7 @@
 				<section id="banner">
 					<div class="content">
 
-						  <body>
+						<body>
 							<div id="unity-container" class="unity-desktop">
 							  <canvas id="unity-canvas" width=960 height=600></canvas>
 							  <div id="unity-loading-bar">
@@ -38,9 +38,9 @@
 							  </div>
 							  <div id="unity-warning"> </div>
 							  <div id="unity-footer">
-								
+								<div id="unity-webgl-logo"></div>
 								<div id="unity-fullscreen-button"></div>
-								<div id="unity-build-title">Fullscreen</div>
+								<div id="unity-build-title">Platformer</div>
 							  </div>
 							</div>
 							<script>
@@ -76,14 +76,14 @@
 							  }
 						
 							  var buildUrl = "Build";
-							  var loaderUrl = buildUrl + "/SimpleGameCompiled.loader.js";
+							  var loaderUrl = buildUrl + "/Platformer.loader.js";
 							  var config = {
-								dataUrl: buildUrl + "/SimpleGameCompiled.data",
-								frameworkUrl: buildUrl + "/SimpleGameCompiled.framework.js",
-								codeUrl: buildUrl + "/SimpleGameCompiled.wasm",
+								dataUrl: buildUrl + "/Platformer.data.br",
+								frameworkUrl: buildUrl + "/Platformer.framework.js.br",
+								codeUrl: buildUrl + "/Platformer.wasm.br",
 								streamingAssetsUrl: "StreamingAssets",
 								companyName: "DefaultCompany",
-								productName: "Web Game",
+								productName: "Platformer",
 								productVersion: "1.0",
 								showBanner: unityShowBanner,
 							  };
@@ -103,13 +103,11 @@
 								meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
 								document.getElementsByTagName('head')[0].appendChild(meta);
 								container.className = "unity-mobile";
+								canvas.className = "unity-mobile";
 						
 								// To lower canvas resolution on mobile devices to gain some
 								// performance, uncomment the following line:
 								// config.devicePixelRatio = 1;
-						
-								canvas.style.width = window.innerWidth + 'px';
-								canvas.style.height = window.innerHeight + 'px';
 						
 								unityShowBanner('WebGL builds are not supported on mobile devices.');
 							  } else {
