@@ -5,7 +5,7 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import GameCard from '@components/games/GameCard';
 import GameCardPlaceholder from '@components/games/GameCardPlaceholder';
-import gamesData from '@assets/Games.json';
+import gamesData from './Games.json';
 
 interface Game {
   title: string;
