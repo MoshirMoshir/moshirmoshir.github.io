@@ -3,8 +3,6 @@
     "title": "Tutorial",
     "description": "This is literally a [tutorial](https://www.youtube.com/watch?v=b8YUfee_pzc) I followed pretty much line by line to try to become more familiar with Unity",
     "image": "Tutorial.png",
-    "playLink": "",
-    "aboutLink": "",
     "date": "2022-07-30",
     "priority": 10
   },
@@ -12,8 +10,6 @@
     "title": "Platformer",
     "description": "A scene I made while learning how to make my own assets. As of writing, you can run around and collect 3 coins (with sound effects and animation!) It's not much, but this project was mainly for me to play around with coding in unity and making my own assets.",
     "image": "Platformer.png",
-    "playLink": "",
-    "aboutLink": "",
     "date": "2023-4-22",
     "priority": 10
   },
@@ -22,7 +18,6 @@
     "description": "My first game jam! Terragrow was made across 3 days with a sum of 18 hours of cumalitive work put into coding and game dev! Made in collaboration with my friend; he did all the sound and music while I did all the art and coding. Terragrow turned out much better than I could have ever hoped, especially for a first playable game. Though the mechanics are a bit fincky, I'm satisfied at the custom art and music we were able to make in such a short time as well as the implemntation of logic through Unity and C#!",
     "image": "Terragrow.png",
     "playLink": "https://moshir.itch.io/terragrow",
-    "aboutLink": "",
     "date": "2023-05-09",
     "priority": 2
   }
