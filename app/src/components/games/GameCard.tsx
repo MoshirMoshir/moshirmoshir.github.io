@@ -42,13 +42,23 @@ const GameCard: React.FC<GameCardProps> = ({ title, description, image, playLink
         <Card.Title>{title}</Card.Title>
         <Card.Subtitle className="mb-2 text-muted">{formatDate(date)}</Card.Subtitle>
         <Card.Text as="div" className="text-start">
-          <ReactMarkdown>{description}</ReactMarkdown>
+          <ReactMarkdown
+            components={{
+              a: ({ node, ...props }) => (
+                <a {...props} target="_blank" rel="noopener noreferrer">
+                  {props.children}
+                </a>
+              )
+            }}
+          >
+            {description}
+          </ReactMarkdown>
         </Card.Text>
         {playLink && (
           <Button variant="primary" href={playLink} target="_blank" className="mt-auto">Play Now</Button>
         )}
         {aboutLink && (
-          <Button variant="primary" href={aboutLink} target="_blank" className="mt-2">Learn More</Button>
+          <Button variant="primary" href={aboutLink} className="mt-2">Learn More</Button>
         )}
       </Card.Body>
     </Card>
