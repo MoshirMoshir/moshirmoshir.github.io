@@ -1,0 +1,54 @@
+.projects-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .floating-icons-container {
+    position: relative;
+    width: 100%;
+    height: calc(50vh); /* Adjust based on carousel height */
+    margin-top: 20px; /* Add margin to avoid overlap with the carousel */
+  }
+  
+  .floating-icon {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: #2b3035;
+    color: #f8f9fa;
+    border: 1px solid #f8f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.1s;
+  }
+
+  [data-bs-theme="light"] .floating-icon {
+    background-color: #f8f9fa;
+    color: #2b3035;
+    border: 1px solid #2b3035;
+  }
+  
+  .icon-content {
+    text-align: center;
+  }
+  
+  .carousel-placeholder {
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2b3035;
+    border: 1px solid #f8f9fa;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  [data-bs-theme="light"] .carousel-placeholder{
+    background-color: #f8f9fa;
+    border: 1px solid #2b3035;
+  }
