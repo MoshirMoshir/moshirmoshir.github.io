@@ -1,17 +1,13 @@
-import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
-import './App.css'
+import { HashRouter as Router, Route, Routes } from 'react-router-dom';
+import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import NavBar from '@components/navbar/NavBar'
-import Home from '@pages/home/Home'
-import Blogs from '@pages/blogs/Blogs'
-import Projects from '@pages/projects/Projects'
-import Games from '@pages/games/Games'
+import NavBar from '@components/navbar/NavBar';
+import Home from '@pages/home/Home';
+import Blogs from '@pages/blogs/Blogs';
+import Projects from '@pages/projects/Projects';
+import Games from '@pages/games/Games';
 
 function App() {
-  // const [count, setCount] = useState(0)
-
   return (
     <>
       <Router>
@@ -24,7 +20,7 @@ function App() {
         </Routes>
       </Router>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
