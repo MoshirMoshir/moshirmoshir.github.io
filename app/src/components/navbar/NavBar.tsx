@@ -6,6 +6,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import Carrot from '@assets/Carrot.svg';
 import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const NavBar: React.FC = () => {
   const [theme, setTheme] = useState<string>(() => {
@@ -63,9 +64,9 @@ const NavBar: React.FC = () => {
           </Offcanvas.Header>
           <Offcanvas.Body>
             <Nav className="justify-content-end flex-grow-1 pe-3">
-              <Nav.Link href="/blogs">Blogs</Nav.Link>
-              <Nav.Link href="/projects">Projects</Nav.Link>
-              <Nav.Link href="/games">Games</Nav.Link>
+              <Nav.Link as={NavLink} to="/blogs">Blogs</Nav.Link>
+              <Nav.Link as={NavLink} to="/projects">Projects</Nav.Link>
+              <Nav.Link as={NavLink} to="/games">Games</Nav.Link>
               <Nav.Link href="https://github.com/MoshirMoshir/Moshir.dev-React" target="_blank" rel="noopener noreferrer">README.md</Nav.Link>
               <Nav.Item>
                 <button onClick={() => toggleTheme(theme === 'dark' ? 'light' : 'dark')} className="btn btn-outline-secondary ms-2">
