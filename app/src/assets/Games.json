@@ -20,5 +20,11 @@
     "playLink": "https://moshir.itch.io/terragrow",
     "date": "2023-05-09",
     "priority": 2
+  },
+  {
+    "title": "Minecraft SMP",
+    "description": "A Minecraft server built on a Oracle Cloud VM. Using Fabric, both Java and Bedrock Clients can connect (Java account still required) with player sync across all devices. Additionally, a custom set of server-sided mods and datapacks enhance the minecraft experience while also still being compatible with a Vanilla client. The server is still in development, but is currently open to the public. \n\nJava Address: smp.minecraft.org \n\nBedrock Address: smb.minecraft.org",
+    "date": "2024-06-01",
+    "priority": 1
   }
 ]
