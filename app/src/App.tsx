@@ -9,17 +9,15 @@ import Games from '@pages/games/Games';
 
 function App() {
   return (
-    <>
-      <Router>
-        <NavBar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/blogs" element={<Blogs />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/games" element={<Games />} />
-        </Routes>
-      </Router>
-    </>
+    <Router>
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/blogs" element={<Blogs />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/games" element={<Games />} />
+      </Routes>
+    </Router>
   );
 }
 
