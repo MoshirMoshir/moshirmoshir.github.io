@@ -10,9 +10,9 @@ import gamesData from '@assets/Games.json';
 interface Game {
   title: string;
   description: string;
-  image: string;
-  playLink: string;
-  aboutLink: string;
+  image?: string;
+  playLink?: string;
+  aboutLink?: string;
   date: string;
   priority: number;
 }
