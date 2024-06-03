@@ -1,0 +1,10 @@
+/* .games-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-column-gap: 40px;
+}
+
+.games-grid-item {
+  display: flex;
+  flex-direction: column;
+}  */

@@ -1,0 +1,19 @@
+.navbar {
+  border-radius: 10px;
+}
+
+.navbar {
+  /* background-color: rgba(255, 255, 255, 0.85) !important; /* Adjust color and opacity for light mode */
+}
+
+[data-bs-theme="dark"] .navbar {
+  /* background-color: rgba(36, 36, 36, 0.85) !important; /* Adjust color and opacity for dark mode */
+}
+
+.bi-sun-fill {
+  color: white;
+}
+
+.bi-moon-fill {
+  color: black;
+}
