@@ -67,7 +67,7 @@ const NavBar: React.FC = () => {
               <Nav.Link as={NavLink} to="/blogs">Blogs</Nav.Link>
               <Nav.Link as={NavLink} to="/projects">Projects</Nav.Link>
               <Nav.Link as={NavLink} to="/games">Games</Nav.Link>
-              <Nav.Link href="https://github.com/MoshirMoshir/Moshir.dev-React" target="_blank" rel="noopener noreferrer">README.md</Nav.Link>
+              <Nav.Link href="https://github.com/MoshirMoshir/moshirmoshir.github.io" target="_blank" rel="noopener noreferrer">README.md</Nav.Link>
               <Nav.Item>
                 <button onClick={() => toggleTheme(theme === 'dark' ? 'light' : 'dark')} className="btn btn-outline-secondary ms-2">
                 {theme === 'dark' ? (
