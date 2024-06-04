@@ -28,14 +28,33 @@ const ProjectBubbleTank: React.FC<ProjectBubbleTankProps> = ({ projects, onBubbl
       },
     });
 
-    const walls = [
+    const boxWalls = [
       Bodies.rectangle(containerRef.current.clientWidth / 2, 0, containerRef.current.clientWidth, 10, { isStatic: true }),
       Bodies.rectangle(containerRef.current.clientWidth / 2, containerRef.current.clientHeight, containerRef.current.clientWidth, 10, { isStatic: true }),
       Bodies.rectangle(0, containerRef.current.clientHeight / 2, 10, containerRef.current.clientHeight, { isStatic: true }),
       Bodies.rectangle(containerRef.current.clientWidth, containerRef.current.clientHeight / 2, 10, containerRef.current.clientHeight, { isStatic: true }),
     ];
 
-    const bubbles = projects.map((project, index) => {
+    var Box = Body.create({
+      parts: boxWalls,
+      isStatic: true,
+    });
+
+    /* BROKEN
+    // Update Box when window changes size
+    const windowWidth = containerRef.current.clientWidth;
+    const windowHeight = containerRef.current.clientHeight;
+    // if window size changes update boxWalls
+    window.addEventListener('resize', () => {
+      if (!containerRef.current) return; // Add null check here
+      if (containerRef.current.clientWidth !== windowWidth || containerRef.current.clientHeight !== windowHeight) {
+      Body.scale(Box, containerRef.current.clientWidth / windowWidth, containerRef.current.clientHeight / windowHeight);
+      console.log(containerRef.current.clientWidth);
+      }
+    });
+    */
+   
+    const bubbles = projects.map((project) => {
       const x = Math.random() * (containerRef.current!.clientWidth - 100) + 50;
       const y = Math.random() * (containerRef.current!.clientHeight - 100) + 50;
       const bubble = Bodies.circle(x, y, 50, {
@@ -56,7 +75,7 @@ const ProjectBubbleTank: React.FC<ProjectBubbleTankProps> = ({ projects, onBubbl
       return bubble;
     });
 
-    World.add(engine.world, [...walls, ...bubbles]);
+    World.add(engine.world, [Box, ...bubbles]);
 
     Render.run(render);
     const runner = Runner.create();
@@ -79,21 +98,6 @@ const ProjectBubbleTank: React.FC<ProjectBubbleTankProps> = ({ projects, onBubbl
         }
       });
     });
-
-    // Synchronize the rendering with Matter.js
-    const syncRender = () => {
-      render.bounds.min.x = 0;
-      render.bounds.min.y = 0;
-      render.bounds.max.x = containerRef.current!.clientWidth;
-      render.bounds.max.y = containerRef.current!.clientHeight;
-      Render.lookAt(render, {
-        min: { x: 0, y: 0 },
-        max: { x: containerRef.current!.clientWidth, y: containerRef.current!.clientHeight }
-      });
-      requestAnimationFrame(syncRender);
-    };
-
-    requestAnimationFrame(syncRender);
 
     return () => {
       Render.stop(render);
