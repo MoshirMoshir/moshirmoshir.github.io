@@ -48,7 +48,7 @@ const Projects: React.FC = () => {
       Bodies.rectangle(containerRef.current.clientWidth, containerRef.current.clientHeight / 2, 10, containerRef.current.clientHeight, { isStatic: true }),
     ];
 
-    const bubbles = projectsData.map((project, index) => {
+    const bubbles = projectsData.map((project) => {
       const x = Math.random() * (containerRef.current!.clientWidth - 100) + 50;
       const y = Math.random() * (containerRef.current!.clientHeight - 100) + 50;
       const bubble = Bodies.circle(x, y, 50, {
