@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from 'react';
 import { Engine, Render, Bodies, World, Body, Events, Runner } from 'matter-js';
-import ProjectBubble from './ProjectBubble';
+import './ProjectBubbleTank.css';
 
 interface ProjectBubbleTankProps {
-  projects: { title: string; description: string }[];
+  projects: { id: number; title: string; description: string; }[];
   onBubbleClick: (project: { title: string; description: string }) => void;
 }
 
@@ -80,6 +80,21 @@ const ProjectBubbleTank: React.FC<ProjectBubbleTankProps> = ({ projects, onBubbl
       });
     });
 
+    // Synchronize the rendering with Matter.js
+    const syncRender = () => {
+      render.bounds.min.x = 0;
+      render.bounds.min.y = 0;
+      render.bounds.max.x = containerRef.current!.clientWidth;
+      render.bounds.max.y = containerRef.current!.clientHeight;
+      Render.lookAt(render, {
+        min: { x: 0, y: 0 },
+        max: { x: containerRef.current!.clientWidth, y: containerRef.current!.clientHeight }
+      });
+      requestAnimationFrame(syncRender);
+    };
+
+    requestAnimationFrame(syncRender);
+
     return () => {
       Render.stop(render);
       World.clear(engine.world, false);
@@ -94,8 +109,13 @@ const ProjectBubbleTank: React.FC<ProjectBubbleTankProps> = ({ projects, onBubbl
   return (
     <div className="floating-icons-container" ref={containerRef}>
       {projects.map((project, index) => (
-        <div key={index} ref={(el) => (bubblesRef.current[index] = el!)}>
-          <ProjectBubble title={project.title} onClick={() => onBubbleClick(project)} />
+        <div
+          key={project.id}
+          ref={(el) => bubblesRef.current[index] = el!}
+          className="floating-icon"
+          onClick={() => onBubbleClick(project)}
+        >
+          <div className="icon-content">{project.title}</div>
         </div>
       ))}
     </div>
