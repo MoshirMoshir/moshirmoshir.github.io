@@ -1,4 +1,3 @@
-// loadProjects.tsx
 import MinecraftSMP from './project_pages/MinecraftSMP';
 
 export interface Project {

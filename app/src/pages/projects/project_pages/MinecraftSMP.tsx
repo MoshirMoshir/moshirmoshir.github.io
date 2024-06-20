@@ -1,4 +1,3 @@
-// project_pages/MinecraftSMP.tsx
 import React from 'react';
 
 interface ProjectMetadata {
