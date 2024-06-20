@@ -1,5 +1,6 @@
 import React from 'react';
 import './ProjectCarouselItem.css';
+import { Row } from 'react-bootstrap';
 
 interface ProjectCarouselItemProps {
   title: string;
@@ -17,8 +18,10 @@ const ProjectCarouselItem: React.FC<ProjectCarouselItemProps> = ({ title, descri
         backgroundPosition: image ? 'center' : undefined,
       }}
     >
-      <h3>{title}</h3>
-      <p>{description}</p>
+      <Row>
+        <h3>{title}</h3>
+        <p>{description}</p>
+      </Row>
     </div>
   );
 };

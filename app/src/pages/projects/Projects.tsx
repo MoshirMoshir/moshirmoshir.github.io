@@ -1,20 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Container from 'react-bootstrap/Container';
 import Carousel from 'react-bootstrap/Carousel';
 import ProjectCarouselItem from '@components/projects/ProjectCarouselItem';
 import ProjectBubbleTank from '@components/projects/ProjectBubbleTank';
 import ProjectModal from '@components/projects/ProjectModal';
+import loadProjects, { Project } from './loadProjects';
 import './Projects.css'; // Import the custom CSS
 
-const projectsData = [
-  { id: 1, title: 'Project 1', description: 'Description for Project 1', image: '' },
-  { id: 2, title: 'Project 2', description: 'Description for Project 2', image: '' },
-  { id: 3, title: 'Project 3', description: 'Description for Project 3', image: '' },
-];
-
 const Projects: React.FC = () => {
+  const [projectsData, setProjectsData] = useState<Project[]>([]);
   const [show, setShow] = useState(false);
   const [currentProject, setCurrentProject] = useState<{ title: string; description: string } | null>(null);
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      const projects = await loadProjects();
+      setProjectsData(projects);
+    };
+
+    fetchProjects();
+  }, []);
 
   const handleClose = () => setShow(false);
   const handleShow = (project: { title: string; description: string }) => {

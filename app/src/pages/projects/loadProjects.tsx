@@ -1,23 +1,46 @@
-import matter from 'front-matter';
-import { marked } from 'marked';
+import MinecraftSMP from './project_pages/MinecraftSMP';
 
-interface Project {
+export interface Project {
+  id: number;
+  title: string;
+  description: string;
+  content: string;
+  icon: string;
+  image: string;
+  banner: string;
+  date: string;
+  priority: number;
+  featured: boolean;
+}
+
+interface ProjectMetadata {
   title: string;
   description: string;
   date: string;
   featured: boolean;
-  content: string;
 }
 
-export const loadProject = async (markdown: string): Promise<Project> => {
-  const { attributes, body } = matter(markdown) as { attributes: any, body: string };
-  const content = await marked(body);
+const loadProjects = async (): Promise<Project[]> => {
+  const projectComponents = [
+    MinecraftSMP,
+    // Add other project imports here
+  ];
 
-  return {
-    title: attributes.title as string,
-    description: attributes.description as string,
-    date: attributes.date as string,
-    featured: attributes.featured as boolean,
-    content: content,
-  };
+  const projects: Project[] = projectComponents.map((Component, index) => {
+    const metadata: ProjectMetadata | undefined = (Component as any).metadata;
+
+    if (!metadata) {
+      return null; // Handle the case where metadata is not defined
+    }
+
+    return {
+      id: index + 1, // Assign a unique ID
+      ...metadata,
+      content: `<h1>${metadata.title}</h1><p>${metadata.description}</p>`, // Example content handling
+    };
+  }).filter((project): project is Project => project !== null);
+
+  return projects;
 };
+
+export default loadProjects;

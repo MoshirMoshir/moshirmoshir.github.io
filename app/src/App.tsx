@@ -6,6 +6,7 @@ import Home from '@pages/home/Home';
 import Blogs from '@pages/blogs/Blogs';
 import Projects from '@pages/projects/Projects';
 import Games from '@pages/games/Games';
+import MinecraftSMP from '@pages/projects/project_pages/MinecraftSMP';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/games" element={<Games />} />
+        <Route path="/projects/MinecraftSMP" element={<MinecraftSMP />} />
       </Routes>
     </>
   );
