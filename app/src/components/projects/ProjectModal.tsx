@@ -20,7 +20,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ show, handleClose, title, d
         <Button variant="secondary" onClick={handleClose}>
           Close
         </Button>
-        <Button variant="primary" href={`/projects/${title.replace(/\s+/g, '-').toLowerCase()}`}>
+        <Button variant="primary" href={`#/projects/${title.replace(/\s+/g, '')}`}>
           View Project
         </Button>
       </Modal.Footer>
