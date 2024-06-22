@@ -4,28 +4,34 @@ import Carousel from 'react-bootstrap/Carousel';
 import ProjectCarouselItem from '@components/projects/ProjectCarouselItem';
 import ProjectBubbleTank from '@components/projects/ProjectBubbleTank';
 import ProjectModal from '@components/projects/ProjectModal';
-import loadProjects, { Project } from './loadProjects';
+import loadProjects, { ProjectMetadata } from './loadProjects';
 import './Projects.css'; // Import the custom CSS
 
 const Projects: React.FC = () => {
-  const [projectsData, setProjectsData] = useState<Project[]>([]);
   const [show, setShow] = useState(false);
-  const [currentProject, setCurrentProject] = useState<{ title: string; description: string } | null>(null);
+  const [currentProject, setCurrentProject] = useState<ProjectMetadata | null>(null);
+  const [projectsData, setProjectsData] = useState<ProjectMetadata[]>([]);
 
   useEffect(() => {
-    const fetchProjects = async () => {
+    const fetchData = async () => {
       const projects = await loadProjects();
       setProjectsData(projects);
     };
 
-    fetchProjects();
+    fetchData();
   }, []);
 
   const handleClose = () => setShow(false);
-  const handleShow = (project: { title: string; description: string }) => {
+  const handleShow = (project: ProjectMetadata) => {
     setCurrentProject(project);
     setShow(true);
   };
+
+  const bubbleProperties = projectsData.map(project => ({
+    id: project.id!,
+    title: project.title || '',
+    description: project.description || ''
+  }));
 
   return (
     <Container className="projects-container">
@@ -33,19 +39,19 @@ const Projects: React.FC = () => {
       <Carousel>
         {projectsData.map((project) => (
           <Carousel.Item key={project.id}>
-            <ProjectCarouselItem title={project.title} description={project.description} image={project.image} />
+            <ProjectCarouselItem title={project.title || ''} description={project.description || ''} image={project.image || ''} />
           </Carousel.Item>
         ))}
       </Carousel>
 
-      <ProjectBubbleTank projects={projectsData} onBubbleClick={handleShow} />
+      <ProjectBubbleTank projects={bubbleProperties} onBubbleClick={handleShow} />
 
       {currentProject && (
         <ProjectModal 
           show={show}
           handleClose={handleClose}
-          title={currentProject.title}
-          description={currentProject.description}
+          title={currentProject.title || ''}
+          description={currentProject.description || ''}
         />
       )}
     </Container>
