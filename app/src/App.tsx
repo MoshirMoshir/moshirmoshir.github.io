@@ -6,7 +6,7 @@ import Home from '@pages/home/Home';
 import Blogs from '@pages/blogs/Blogs';
 import Projects from '@pages/projects/Projects';
 import Games from '@pages/games/Games';
-import MinecraftSMP from '@pages/projects/project_pages/MinecraftSMP';
+import MinecraftSMP from '@pages/projects/MinecraftSMP';
 
 function App() {
   return (
