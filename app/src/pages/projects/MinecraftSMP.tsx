@@ -1,11 +1,6 @@
+// MinecraftSMP.tsx
 import React from 'react';
-
-interface ProjectMetadata {
-  title: string;
-  description: string;
-  date: string;
-  featured: boolean;
-}
+import { ProjectMetadata } from './loadProjects';
 
 const MinecraftSMP: React.FC & { metadata?: ProjectMetadata } = () => {
   return (
