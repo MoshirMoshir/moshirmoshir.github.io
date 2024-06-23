@@ -14,8 +14,20 @@ const MinecraftSMP: React.FC = () => {
 
   const handleDeviceOrientation = (e: DeviceOrientationEvent) => {
     const parallax = document.querySelector('.background-container') as HTMLElement;
-    const amountMovedX = e.gamma ? e.gamma / 45 * 50 : 0;
-    const amountMovedY = e.beta ? e.beta / 45 * 50 : 0;
+
+    let amountMovedX = 0;
+    let amountMovedY = 0;
+
+    if (screen.orientation.angle === 0 || screen.orientation.angle === 180) {
+      // Portrait
+      amountMovedX = e.gamma ? e.gamma / 45 * 50 : 0;
+      amountMovedY = e.beta ? e.beta / 45 * 50 : 0;
+    } else if (screen.orientation.angle === 90 || screen.orientation.angle === -90) {
+      // Landscape
+      amountMovedX = e.beta ? e.beta / 45 * 50 : 0;
+      amountMovedY = e.gamma ? e.gamma / 45 * 50 : 0;
+    }
+
     parallax.style.transform = `translate3d(${amountMovedX}px, ${amountMovedY}px, 0) scale(1.3)`;
   };
 
