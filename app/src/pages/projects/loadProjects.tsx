@@ -1,4 +1,4 @@
-import MinecraftSMP from './MinecraftSMP';
+import MinecraftSMP from './project_pages/MinecraftSMP';
 
 export interface ProjectMetadata {
   id?: number;
