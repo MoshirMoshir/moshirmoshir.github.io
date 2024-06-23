@@ -8,7 +8,7 @@
     overflow: hidden;
     background-size: cover;
     background-position: center;
-    filter: blur(5px); /* Add blur effect */
+    filter: blur(3px); /* Add blur effect */
     z-index: -1; /* Ensure it stays behind all other content */
     transform: translateZ(0); /* Enhance performance */
     transition: transform 0.1s ease-out; /* Smooth transition for parallax effect */
