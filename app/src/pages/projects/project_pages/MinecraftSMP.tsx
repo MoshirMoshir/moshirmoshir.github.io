@@ -16,7 +16,7 @@ const MinecraftSMP: React.FC = () => {
     const parallax = document.querySelector('.background-container') as HTMLElement;
     const amountMovedX = e.gamma ? e.gamma / 45 * 100 : 0;
     const amountMovedY = e.beta ? e.beta / 45 * 100 : 0;
-    parallax.style.transform = `translate3d(${amountMovedX}px, ${amountMovedY}px, 0) scale(1.1)`;
+    parallax.style.transform = `translate3d(${amountMovedX}px, ${amountMovedY}px, 0) scale(1.3)`;
   };
 
   useEffect(() => {
