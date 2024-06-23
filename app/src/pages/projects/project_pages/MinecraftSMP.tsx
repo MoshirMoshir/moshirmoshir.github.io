@@ -3,6 +3,7 @@ import './MinecraftSMP.css';
 import background from '@assets/MinecraftBackground.png';
 
 const MinecraftSMP: React.FC = () => {
+  const isMobile = () => /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
   const handleMouseMove = (e: MouseEvent) => {
     const parallax = document.querySelector('.background-container') as HTMLElement;
@@ -11,10 +12,26 @@ const MinecraftSMP: React.FC = () => {
     parallax.style.transform = `translate3d(${amountMovedX}px, ${amountMovedY}px, 0) scale(1.1)`;
   };
 
+  const handleDeviceOrientation = (e: DeviceOrientationEvent) => {
+    const parallax = document.querySelector('.background-container') as HTMLElement;
+    const amountMovedX = e.gamma ? e.gamma / 45 * 100 : 0;
+    const amountMovedY = e.beta ? e.beta / 45 * 100 : 0;
+    parallax.style.transform = `translate3d(${amountMovedX}px, ${amountMovedY}px, 0) scale(1.1)`;
+  };
+
   useEffect(() => {
-    window.addEventListener('mousemove', handleMouseMove);
+    if (isMobile()) {
+      window.addEventListener('deviceorientation', handleDeviceOrientation);
+    } else {
+      window.addEventListener('mousemove', handleMouseMove);
+    }
+
     return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
+      if (isMobile()) {
+        window.removeEventListener('deviceorientation', handleDeviceOrientation);
+      } else {
+        window.removeEventListener('mousemove', handleMouseMove);
+      }
     };
   }, []);
 
