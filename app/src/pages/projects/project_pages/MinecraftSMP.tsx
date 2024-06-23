@@ -28,7 +28,7 @@ const MinecraftSMP: React.FC = () => {
       amountMovedY = e.gamma ? e.gamma / 45 * 50 : 0;
     }
 
-    parallax.style.transform = `translate3d(${amountMovedX}px, ${amountMovedY}px, 0) scale(1.3)`;
+    parallax.style.transform = `translate3d(${amountMovedX}px, ${amountMovedY}px, 0) scale(1.4)`;
   };
 
   useEffect(() => {
