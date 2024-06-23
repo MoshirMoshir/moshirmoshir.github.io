@@ -1,11 +1,17 @@
-/* MinecraftSMP.css */
 .content {
   position: relative;
   z-index: 1;
   color: white;
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.5); /* Optional: Add a semi-transparent background to improve text readability */
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 1px solid #f8f9fa;
   padding: 20px;
   border-radius: 8px;
-  margin-top: 50px; /* Adjust as necessary */
+  margin-top: 50px;
+}
+
+[data-bs-theme="light"] .content {
+  background-color: rgba(248, 249, 250, .5);
+  color: #2b3035;
+  border: 1px solid #2b3035;
 }
