@@ -8,37 +8,37 @@ const OverviewTab: React.FC = () => (
         <img className="d-block w-100" src="https://via.placeholder.com/800x400" alt="First slide" />
         <Carousel.Caption>
           <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <p>Images to be implemented</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
         <img className="d-block w-100" src="https://via.placeholder.com/800x400" alt="Second slide" />
         <Carousel.Caption>
           <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <p></p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
         <img className="d-block w-100" src="https://via.placeholder.com/800x400" alt="Third slide" />
         <Carousel.Caption>
           <h3>Third slide label</h3>
-          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+          <p></p>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
     <Row>
       <Col md={6}>
-        <Card className="mb-4">
+        <Card className="mb-4 transparent-container">
           <Card.Body>
-            <Card.Title>Welcome to Minecraft SMP</Card.Title>
+            <Card.Title>Welcome to My Minecraft SMP</Card.Title>
             <Card.Text>
-              Our server offers a unique blend of gameplay elements, combining the best of both Java and Bedrock editions.
+              My server offers a unique blend of gameplay elements, combining the best of both Java and Bedrock editions.
             </Card.Text>
           </Card.Body>
         </Card>
       </Col>
       <Col md={6}>
-        <Card className="mb-4">
+        <Card className="mb-4 transparent-container">
           <Card.Body>
             <Card.Title>Unique Features</Card.Title>
             <Card.Text>
@@ -50,11 +50,11 @@ const OverviewTab: React.FC = () => (
     </Row>
     <Row>
       <Col md={12}>
-        <Card className="mb-4">
+        <Card className="mb-4 transparent-container">
           <Card.Body>
-            <Card.Title>Join Our Community</Card.Title>
+            <Card.Title>Join the Community</Card.Title>
             <Card.Text>
-              Connect with players from around the world and enjoy seamless gameplay across different devices. Whether you are on Java or Bedrock, our server ensures a unified experience.
+              Connect with players from around the world and enjoy seamless gameplay across different devices. Whether you are on Java or Bedrock, my SMP ensures a unified experience.
             </Card.Text>
           </Card.Body>
         </Card>
