@@ -30,13 +30,14 @@ const Projects: React.FC = () => {
   const bubbleProperties = projectsData.map(project => ({
     id: project.id!,
     title: project.title || '',
+    hash: project.hash || '',
     description: project.description || ''
   }));
 
   return (
     <Container className="projects-container">
       <h1>Projects</h1>
-      <Carousel>
+      <Carousel className='carousel'>
         {projectsData.map((project) => (
           <Carousel.Item key={project.id}>
             <ProjectCarouselItem title={project.title || ''} description={project.description || ''} image={project.image || ''} />
@@ -51,6 +52,7 @@ const Projects: React.FC = () => {
           show={show}
           handleClose={handleClose}
           title={currentProject.title || ''}
+          hash={currentProject.hash || ''}
           description={currentProject.description || ''}
         />
       )}
