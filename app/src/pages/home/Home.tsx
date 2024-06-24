@@ -1,6 +1,6 @@
 import React from 'react';
 import Carrot from '@assets/Carrot.svg';
-import './Home.css'; // Import the custom CSS
+import './Home.css';
 
 const Home: React.FC = () => {
   return (
