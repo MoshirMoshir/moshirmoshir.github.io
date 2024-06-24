@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import IosPermissionModal from './IosPermissionModal'; // Make sure to update the path as needed
 import './ParallaxBackground.css';
 
 interface ParallaxBackgroundProps {
@@ -6,6 +7,8 @@ interface ParallaxBackgroundProps {
 }
 
 const ParallaxBackground: React.FC<ParallaxBackgroundProps> = ({ image }) => {
+  const [showModal, setShowModal] = useState(false);
+
   const isMobile = () => /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
   const handleMouseMove = (e: MouseEvent) => {
@@ -34,9 +37,24 @@ const ParallaxBackground: React.FC<ParallaxBackgroundProps> = ({ image }) => {
     parallax.style.transform = `translate3d(${amountMovedX}px, ${amountMovedY}px, 0) scale(1.4)`;
   };
 
+  const requestPermission = async () => {
+    const DeviceOrientationEventWithPermission = DeviceOrientationEvent as any;
+    if (typeof DeviceOrientationEventWithPermission.requestPermission === 'function') {
+      const response = await DeviceOrientationEventWithPermission.requestPermission();
+      if (response === 'granted') {
+        window.addEventListener('deviceorientation', handleDeviceOrientation);
+      }
+    }
+  };
+
   useEffect(() => {
     if (isMobile()) {
-      window.addEventListener('deviceorientation', handleDeviceOrientation);
+      const DeviceOrientationEventWithPermission = DeviceOrientationEvent as any;
+      if (typeof DeviceOrientationEventWithPermission.requestPermission === 'function') {
+        setShowModal(true);
+      } else {
+        window.addEventListener('deviceorientation', handleDeviceOrientation);
+      }
     } else {
       window.addEventListener('mousemove', handleMouseMove);
     }
@@ -50,11 +68,24 @@ const ParallaxBackground: React.FC<ParallaxBackgroundProps> = ({ image }) => {
     };
   }, []);
 
+  const handleCloseModal = () => setShowModal(false);
+  const handleGrantPermission = () => {
+    setShowModal(false);
+    requestPermission();
+  };
+
   return (
-    <div 
-      className="background-container"
-      style={{ backgroundImage: `url(${image})` }}
-    ></div>
+    <>
+      <div 
+        className="background-container"
+        style={{ backgroundImage: `url(${image})` }}
+      ></div>
+      <IosPermissionModal
+        show={showModal}
+        handleClose={handleCloseModal}
+        handleGrantPermission={handleGrantPermission}
+      />
+    </>
   );
 };
 
