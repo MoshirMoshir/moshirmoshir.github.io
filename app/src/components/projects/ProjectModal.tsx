@@ -6,10 +6,11 @@ interface ProjectModalProps {
   show: boolean;
   handleClose: () => void;
   title: string;
+  hash: string;
   description: string;
 }
 
-const ProjectModal: React.FC<ProjectModalProps> = ({ show, handleClose, title, description }) => {
+const ProjectModal: React.FC<ProjectModalProps> = ({ show, handleClose, title, hash, description }) => {
   return (
     <Modal show={show} onHide={handleClose} centered>
       <Modal.Header closeButton>
@@ -20,7 +21,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ show, handleClose, title, d
         <Button variant="secondary" onClick={handleClose}>
           Close
         </Button>
-        <Button variant="primary" href={`#/projects/${title.replace(/\s+/g, '')}`}>
+        <Button variant="primary" href={`#/projects/${hash}`}>
           View Project
         </Button>
       </Modal.Footer>

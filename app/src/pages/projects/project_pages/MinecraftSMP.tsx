@@ -29,8 +29,10 @@ const MinecraftSMP: React.FC = () => {
       <ParallaxBackground image={background} />
       <div className="content">
         <h1>Minecraft SMP</h1>
-        <p>Welcome to the Minecraft SMP project page. This is an example project page.</p>
+        <p>Welcome to the Minecraft SMP project page.</p>
+        <p>This Minecraft server is built on a Oracle Cloud VM. Using Fabric, both Java and Bedrock Clients can connect (Java account still required) with player sync across all devices. Additionally, a custom set of server-sided mods and datapacks enhance the minecraft experience while also still being compatible with Vanilla clients. The server is still in development, but is currently open to the public.</p>
       </div>
+      <br />
       <div className="tabs-container">
         <TabContainer tabs={tabs} />
       </div>
@@ -40,8 +42,10 @@ const MinecraftSMP: React.FC = () => {
 
 Object.defineProperty(MinecraftSMP, 'metadata', {
   value: {
-    title: 'Minecraft SMP',
-    description: 'A detailed description of the Minecraft SMP project.',
+    title: 'Moshir\'s Minecraft SMP',
+    hash: 'MinecraftSMP',
+    description: 'My personal public Minecraft server! Using Fabric and datapacks to enhance gameplay while remaining Vanilla-client friendly. Also playable on Bedrock devices! Feel free to join and have fun!',
+    image: 'https://wallpapers-clan.com/wp-content/uploads/2023/10/minecraft-grass-tree-desktop-wallpaper-preview.jpg',
     date: '2024-04-25',
     featured: true,
   },

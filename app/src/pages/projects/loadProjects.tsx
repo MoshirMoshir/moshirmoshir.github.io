@@ -2,6 +2,7 @@ import MinecraftSMP from './project_pages/MinecraftSMP';
 
 export interface ProjectMetadata {
   id?: number;
+  hash?: string;
   title?: string;
   description?: string;
   content?: string;
@@ -24,6 +25,7 @@ const loadProjects = async (): Promise<ProjectMetadata[]> => {
 
     const project: ProjectMetadata = {
       id: index + 1, // Assign a unique ID
+      hash: metadata?.hash,
       title: metadata?.title,
       description: metadata?.description,
       content: metadata?.content,
