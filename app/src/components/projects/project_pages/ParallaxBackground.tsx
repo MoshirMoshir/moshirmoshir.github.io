@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import IosPermissionModal from './IosPermissionModal'; // Make sure to update the path as needed
+import IosPermissionModal from './IosPermissionModal';
 import './ParallaxBackground.css';
 
 interface ParallaxBackgroundProps {
