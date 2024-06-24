@@ -16,9 +16,9 @@ const IosPermissionModal: React.FC<IosPermissionModalProps> = ({ show, handleClo
         <Modal.Title>Enable Parallax Effect</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <p>Cool Background Effect</p>
+        <p>(Let's the website have a cool background effect)</p>
         <p className="ios-permission-note">
-          <em>*iOS requires permission for websites to access tilt/gyroscope</em>
+          <em>*iOS requires permission for websites to access tilt/gyroscope on Apple devices</em>
         </p>
       </Modal.Body>
       <Modal.Footer>
