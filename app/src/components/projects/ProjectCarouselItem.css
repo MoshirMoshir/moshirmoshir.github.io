@@ -21,4 +21,22 @@
   .carousel-item-content p {
     margin: 0;
   }
+
+  .transparent-container {
+    position: relative;
+    z-index: 1;
+    color: #f8f9fa;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 1px solid #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 60px;
+  }
+  
+  [data-bs-theme="light"] .transparent-container {
+    background-color: rgba(248, 249, 250, 0.7);
+    color: #2b3035;
+    border: 1px solid #2b3035;
+  }
   

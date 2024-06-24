@@ -18,7 +18,7 @@ const ProjectCarouselItem: React.FC<ProjectCarouselItemProps> = ({ title, descri
         backgroundPosition: image ? 'center' : undefined,
       }}
     >
-      <Row>
+      <Row className='transparent-container'>
         <h3>{title}</h3>
         <p>{description}</p>
       </Row>
