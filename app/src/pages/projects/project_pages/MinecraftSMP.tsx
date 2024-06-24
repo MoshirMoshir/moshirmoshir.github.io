@@ -1,5 +1,5 @@
 import React from 'react';
-import { Tab, Tabs, Card, Row, Col, Container, Carousel } from 'react-bootstrap';
+import { Tab, Tabs, Card, Row, Col, Container, Carousel, Accordion, Button } from 'react-bootstrap';
 import ParallaxBackground from '@components/projects/project_pages/ParallaxBackground';
 import background from '@assets/MinecraftBackground.png';
 import './MinecraftSMP.css';
@@ -23,11 +23,26 @@ const MinecraftSMP: React.FC = () => {
           <Tab eventKey="overview" title="Overview">
             <OverviewSection />
           </Tab>
-          <Tab eventKey="gameplay-changes" title="Gameplay Changes">
-            <CardDeckSection title="Gameplay Changes" />
-          </Tab>
           <Tab eventKey="how-to-join" title="How to Join">
-            <CardDeckSection title="How to Join" />
+            <HowToJoinSection />
+          </Tab>
+          <Tab eventKey="gameplay-changes" title="Gameplay Enhancements">
+            <GameplayChangesSection />
+          </Tab>
+          <Tab eventKey="new-items" title="New Items">
+            <NewItemsSection />
+          </Tab>
+          <Tab eventKey="overworld-enhancements" title="Overworld Enhancements">
+            <OverworldEnhancementsSection />
+          </Tab>
+          <Tab eventKey="nether-enhancements" title="Nether Enhancements">
+            <NetherEnhancementsSection />
+          </Tab>
+          <Tab eventKey="end-enhancements" title="End Enhancements">
+            <EndEnhancementsSection />
+          </Tab>
+          <Tab eventKey="support" title="Support">
+            <SupportSection />
           </Tab>
         </Tabs>
       </Container>
@@ -97,14 +112,48 @@ const OverviewSection: React.FC = () => (
   </>
 );
 
-const CardDeckSection: React.FC<{ title: string }> = ({ title }) => (
+const HowToJoinSection: React.FC = () => (
+  <Container>
+    <h2>How to Join</h2>
+    <p>To join our Minecraft SMP server, follow the instructions below:</p>
+    <p>
+      Java Address: <Button variant="link" onClick={() => navigator.clipboard.writeText('smp.minecraft.org')}>smp.minecraft.org</Button><br />
+      Bedrock Address: <Button variant="link" onClick={() => navigator.clipboard.writeText('smb.minecraft.org')}>smb.minecraft.org</Button>
+    </p>
+  </Container>
+);
+
+const GameplayChangesSection: React.FC = () => (
+  <Accordion defaultActiveKey="0">
+    <Accordion.Item eventKey="0">
+      <Accordion.Header>Change 1</Accordion.Header>
+      <Accordion.Body>
+        Detailed description of the first gameplay change.
+      </Accordion.Body>
+    </Accordion.Item>
+    <Accordion.Item eventKey="1">
+      <Accordion.Header>Change 2</Accordion.Header>
+      <Accordion.Body>
+        Detailed description of the second gameplay change.
+      </Accordion.Body>
+    </Accordion.Item>
+    <Accordion.Item eventKey="2">
+      <Accordion.Header>Change 3</Accordion.Header>
+      <Accordion.Body>
+        Detailed description of the third gameplay change.
+      </Accordion.Body>
+    </Accordion.Item>
+  </Accordion>
+);
+
+const NewItemsSection: React.FC = () => (
   <Row className="card-deck">
     <Col md={4}>
       <Card className="mb-4">
         <Card.Img variant="top" src="https://via.placeholder.com/150" />
         <Card.Body>
-          <Card.Title>{title} Card 1</Card.Title>
-          <Card.Text>This is a brief description of the first item in the {title} section.</Card.Text>
+          <Card.Title>New Item 1</Card.Title>
+          <Card.Text>Description of the first new item.</Card.Text>
         </Card.Body>
       </Card>
     </Col>
@@ -112,8 +161,8 @@ const CardDeckSection: React.FC<{ title: string }> = ({ title }) => (
       <Card className="mb-4">
         <Card.Img variant="top" src="https://via.placeholder.com/150" />
         <Card.Body>
-          <Card.Title>{title} Card 2</Card.Title>
-          <Card.Text>This is a brief description of the second item in the {title} section.</Card.Text>
+          <Card.Title>New Item 2</Card.Title>
+          <Card.Text>Description of the second new item.</Card.Text>
         </Card.Body>
       </Card>
     </Col>
@@ -121,12 +170,168 @@ const CardDeckSection: React.FC<{ title: string }> = ({ title }) => (
       <Card className="mb-4">
         <Card.Img variant="top" src="https://via.placeholder.com/150" />
         <Card.Body>
-          <Card.Title>{title} Card 3</Card.Title>
-          <Card.Text>This is a brief description of the third item in the {title} section.</Card.Text>
+          <Card.Title>New Item 3</Card.Title>
+          <Card.Text>Description of the third new item.</Card.Text>
         </Card.Body>
       </Card>
     </Col>
   </Row>
+);
+
+const OverworldEnhancementsSection: React.FC = () => (
+  <>
+    <Carousel className="mb-4">
+      <Carousel.Item>
+        <img className="d-block w-100" src="https://via.placeholder.com/800x400" alt="First slide" />
+        <Carousel.Caption>
+          <h3>First slide label</h3>
+          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img className="d-block w-100" src="https://via.placeholder.com/800x400" alt="Second slide" />
+        <Carousel.Caption>
+          <h3>Second slide label</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img className="d-block w-100" src="https://via.placeholder.com/800x400" alt="Third slide" />
+        <Carousel.Caption>
+          <h3>Third slide label</h3>
+          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+    </Carousel>
+    <Accordion defaultActiveKey="0">
+      <Accordion.Item eventKey="0">
+        <Accordion.Header>Enhancement 1</Accordion.Header>
+        <Accordion.Body>
+          Detailed description of the first overworld enhancement.
+        </Accordion.Body>
+      </Accordion.Item>
+      <Accordion.Item eventKey="1">
+        <Accordion.Header>Enhancement 2</Accordion.Header>
+        <Accordion.Body>
+          Detailed description of the second overworld enhancement.
+        </Accordion.Body>
+      </Accordion.Item>
+      <Accordion.Item eventKey="2">
+        <Accordion.Header>Enhancement 3</Accordion.Header>
+        <Accordion.Body>
+          Detailed description of the third overworld enhancement.
+        </Accordion.Body>
+      </Accordion.Item>
+    </Accordion>
+  </>
+);
+
+const NetherEnhancementsSection: React.FC = () => (
+  <>
+    <Carousel className="mb-4">
+      <Carousel.Item>
+        <img className="d-block w-100" src="https://via.placeholder.com/800x400" alt="First slide" />
+        <Carousel.Caption>
+          <h3>First slide label</h3>
+          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img className="d-block w-100" src="https://via.placeholder.com/800x400" alt="Second slide" />
+        <Carousel.Caption>
+          <h3>Second slide label</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img className="d-block w-100" src="https://via.placeholder.com/800x400" alt="Third slide" />
+        <Carousel.Caption>
+          <h3>Third slide label</h3>
+          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+    </Carousel>
+    <Accordion defaultActiveKey="0">
+      <Accordion.Item eventKey="0">
+        <Accordion.Header>Enhancement 1</Accordion.Header>
+        <Accordion.Body>
+          Detailed description of the first nether enhancement.
+        </Accordion.Body>
+      </Accordion.Item>
+      <Accordion.Item eventKey="1">
+        <Accordion.Header>Enhancement 2</Accordion.Header>
+        <Accordion.Body>
+          Detailed description of the second nether enhancement.
+        </Accordion.Body>
+      </Accordion.Item>
+      <Accordion.Item eventKey="2">
+        <Accordion.Header>Enhancement 3</Accordion.Header>
+        <Accordion.Body>
+          Detailed description of the third nether enhancement.
+        </Accordion.Body>
+      </Accordion.Item>
+    </Accordion>
+  </>
+);
+
+const EndEnhancementsSection: React.FC = () => (
+  <>
+    <Carousel className="mb-4">
+      <Carousel.Item>
+        <img className="d-block w-100" src="https://via.placeholder.com/800x400" alt="First slide" />
+        <Carousel.Caption>
+          <h3>First slide label</h3>
+          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img className="d-block w-100" src="https://via.placeholder.com/800x400" alt="Second slide" />
+        <Carousel.Caption>
+          <h3>Second slide label</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img className="d-block w-100" src="https://via.placeholder.com/800x400" alt="Third slide" />
+        <Carousel.Caption>
+          <h3>Third slide label</h3>
+          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+    </Carousel>
+    <Accordion defaultActiveKey="0">
+      <Accordion.Item eventKey="0">
+        <Accordion.Header>Enhancement 1</Accordion.Header>
+        <Accordion.Body>
+          Detailed description of the first end enhancement.
+        </Accordion.Body>
+      </Accordion.Item>
+      <Accordion.Item eventKey="1">
+        <Accordion.Header>Enhancement 2</Accordion.Header>
+        <Accordion.Body>
+          Detailed description of the second end enhancement.
+        </Accordion.Body>
+      </Accordion.Item>
+      <Accordion.Item eventKey="2">
+        <Accordion.Header>Enhancement 3</Accordion.Header>
+        <Accordion.Body>
+          Detailed description of the third end enhancement.
+        </Accordion.Body>
+      </Accordion.Item>
+    </Accordion>
+  </>
+);
+
+const SupportSection: React.FC = () => (
+  <Container>
+    <h2>Support</h2>
+    <p>
+      I am passionate about creating unique Minecraft experiences and developing indie games. Your support helps me continue working on these projects and bring new content to the community.
+    </p>
+    <Button variant="primary" href="https://www.paypal.com/donate/?business=C9CAJFYWQXR9C&no_recurring=0&item_name=Support+me+and+my+projects%21&currency_code=USD" target="_blank" rel="noopener noreferrer">
+      Donate via PayPal
+    </Button>
+  </Container>
 );
 
 Object.defineProperty(MinecraftSMP, 'metadata', {

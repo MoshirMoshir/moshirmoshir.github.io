@@ -17,7 +17,7 @@
 .content {
   position: relative;
   z-index: 1;
-  color: white;
+  color: #f8f9fa;
   text-align: center;
   background-color: rgba(0, 0, 0, 0.5);
   border: 1px solid #f8f9fa;
@@ -40,7 +40,7 @@
 
 .nav-tabs .nav-link {
   background-color: rgba(0, 0, 0, 0.7);
-  color: white;
+  color: #f8f9fa;
   border: 1px solid #f8f9fa;
 }
 
@@ -60,13 +60,21 @@
   border-color: #2b3035;
 }
 
+.carousel-caption h3, .carousel-caption p {
+  color: #f8f9fa;
+}
+
+[data-bs-theme="light"] .carousel-caption h3, [data-bs-theme="light"] .carousel-caption p {
+  color: #2b3035;
+}
+
 .card-deck {
   margin-top: 20px;
 }
 
 .card {
   background-color: rgba(0, 0, 0, 0.7);
-  color: white;
+  color: #f8f9fa;
   border: 1px solid #f8f9fa;
 }
 
