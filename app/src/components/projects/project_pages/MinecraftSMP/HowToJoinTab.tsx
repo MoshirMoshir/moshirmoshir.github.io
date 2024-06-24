@@ -6,8 +6,8 @@ const HowToJoinTab: React.FC = () => (
     <h2>How to Join</h2>
     <p>To join my Minecraft SMP, use the following addresses below:</p>
     <p>
-      Java Address: <Button variant="link" onClick={() => navigator.clipboard.writeText('smp.manasys.org')}>smp.minecraft.org</Button><br />
-      Bedrock Address: <Button variant="link" onClick={() => navigator.clipboard.writeText('smb.manasys.org')}>smb.minecraft.org</Button>
+      Java Address: <Button variant="link" onClick={() => navigator.clipboard.writeText('smp.manasys.org')}>smp.manasys.org</Button><br />
+      Bedrock Address: <Button variant="link" onClick={() => navigator.clipboard.writeText('smb.manasys.org')}>smb.manasys.org</Button>
       <br />
       <em className='note'>(Java account required, even on Bedrock)</em>
     </p>
