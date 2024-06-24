@@ -1,0 +1,22 @@
+.nav-tabs .nav-link {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #f8f9fa;
+    border: 1px solid #f8f9fa;
+  }
+  
+  [data-bs-theme="light"] .nav-tabs .nav-link {
+    background-color: rgba(248, 249, 250, 0.7);
+    color: #2b3035;
+    border: 1px solid #2b3035;
+  }
+  
+  .nav-tabs .nav-link.active {
+    background-color: rgba(0, 0, 0, 0.9);
+    border-color: #f8f9fa;
+  }
+  
+  [data-bs-theme="light"] .nav-tabs .nav-link.active {
+    background-color: rgba(248, 249, 250, 0.9);
+    border-color: #2b3035;
+  }
+  
