@@ -7,6 +7,7 @@ import Blogs from '@pages/blogs/Blogs';
 import Projects from '@pages/projects/Projects';
 import Games from '@pages/games/Games';
 import MinecraftSMP from '@pages/projects/project_pages/MinecraftSMP';
+import ArcadeMap from '@pages/projects/project_pages/ArcadeMap';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/projects" element={<Projects />} />
         <Route path="/games" element={<Games />} />
         <Route path="/projects/MinecraftSMP" element={<MinecraftSMP />} />
+        <Route path="/projects/ArcadeMap" element={<ArcadeMap />} />
       </Routes>
     </>
   );
