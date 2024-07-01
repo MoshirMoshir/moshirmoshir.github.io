@@ -1,0 +1,30 @@
+.content {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 1px solid #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 50px;
+}
+
+[data-bs-theme="light"] .content {
+  background-color: rgba(248, 249, 250, 0.5);
+  color: #2b3035;
+  border: 1px solid #2b3035;
+}
+ 
+.map-embed {
+  width: 100%;
+  height: calc(100vh - 340px);
+  border: 0;
+}
+
+/* Adjust height for mobile devices */
+@media (max-width: 768px) {
+    .map-embed {
+      height: calc(100vh - 400px);
+    }
+  }

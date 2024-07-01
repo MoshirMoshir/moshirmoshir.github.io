@@ -1,4 +1,5 @@
 import MinecraftSMP from './project_pages/MinecraftSMP';
+import ArcadeMap from './project_pages/ArcadeMap';
 
 export interface ProjectMetadata {
   id?: number;
@@ -17,6 +18,7 @@ export interface ProjectMetadata {
 const loadProjects = async (): Promise<ProjectMetadata[]> => {
   const projectComponents = [
     MinecraftSMP,
+    ArcadeMap,
     // Add other project imports here
   ];
 
